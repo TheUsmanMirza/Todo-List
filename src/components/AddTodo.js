@@ -13,7 +13,7 @@ const AddTodo = () => {
     event.preventDefault();
 
     if (title.trim().length === 0) {
-      alert("Enter a task title before adding !!");
+      alert("Please Enter the Task Title before Adding.");
       setTitle("");
       return;
     }

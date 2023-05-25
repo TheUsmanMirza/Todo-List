@@ -4,20 +4,24 @@ export const tasksSlice = createSlice({
   name: "tasks",
   initialState: [
     {
-      id: "2023-2-7",
+      id: "2023-5-21",
       name: "Title 1",
       desc: "Jumping directly to Web3",
       status: false,
     },
-    { id: "2023-2-14", name: "Title 2", desc: "Coding Tech", status: true },
+    { 
+      id: "2023-5-22", 
+      name: "Title 2", 
+      desc: "Coding Tech",
+       status: true },
     {
-      id: "2023-2-3",
+      id: "2023-5-23",
       name: "Title 3",
       desc: "You don't need to memorize all the 30 terms",
       status: true,
     },
     {
-      id: "2023-1-23",
+      id: "2023-5-25",
       name: "Title 4",
       desc: "Rust is an ideal smart contract language",
       status: false,
@@ -51,6 +55,6 @@ export const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, deleteTask, updateTask } = tasksSlice.actions;
+export const { addTask, updateTask, deleteTask } = tasksSlice.actions;
 
 export default tasksSlice.reducer;

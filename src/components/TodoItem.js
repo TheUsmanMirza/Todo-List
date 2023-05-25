@@ -22,16 +22,17 @@ const TodoItem = ({ id, title, desc, status }) => {
   };
 
   function formatDate(dateString) {
-    console.log(dateString);
     const date = new Date(dateString);
-
     const day = String(date.getDate()).padStart(2, "0");
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = String(date.getFullYear()).slice(-2);
     const hours = String(date.getHours()).padStart(2, "0");
     const minutes = String(date.getMinutes()).padStart(2, "0");
-
-    return `${day}-${month}-${year} at ${hours}:${minutes}`;
+    const timeString = `${hours}:${minutes}`;
+    const [hourString, minute] = timeString.split(":");
+    const hour = +hourString % 24;
+    const time = (hour % 12 || 12) + ":" + minute + (hour < 12 ? "AM" : "PM");
+    return `${day}-${month}-${year} at ${time}`;
   }
 
   return (
@@ -58,13 +59,14 @@ const TodoItem = ({ id, title, desc, status }) => {
         ) : (
           <h1>{title}</h1>
         )}
-        <p style={{ color: "brown" }}>{desc}</p>
+        <p style={{ color: "#072d54" }}>{desc}</p>
         {status ? (
           <p style={{ color: "green" }}>Completed</p>
         ) : (
           <p style={{ color: "red" }}>Pending</p>
         )}
-        {/* <b>{"Date: "+formatDate(id)}</b> */}
+        
+        <b>{"Date: "+formatDate(id)}</b>
       </div>
       <div style={{ display: "" }}>
         <div>
@@ -78,12 +80,13 @@ const TodoItem = ({ id, title, desc, status }) => {
           </button>
         </div>
         <div>
+        <br/>
           {status ? (
             ""
           ) : (
+           
             <button
-              className="remove-task-button"
-              style={{ backgroundColor: "#FAD7A0", color: "black" }}
+              className="update-task-button"
               onClick={() => {
                 updateStatus();
               }}

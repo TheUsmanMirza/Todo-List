@@ -95,6 +95,20 @@ body{
     background-color:rgb(247, 54, 54) ;
 }
 
+.update-task-button{
+  background-color: rgb(118, 118, 191);
+  height: 32px;
+  color: white;
+  border-radius: 4px;
+  width: 70px;
+  border:none;
+}
+
+.update-task-button:hover{
+  cursor: pointer;
+  background-color:rgb(59, 59, 185);
+}
+
 
 /* styling for todo checkbox starts  */
 .checkbox-wrapper-11 {
