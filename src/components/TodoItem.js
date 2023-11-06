@@ -45,13 +45,12 @@ const TodoItem = ({ id, title, desc, status }) => {
       }}
     >
       <div style={{ textAlign: "left" }}>
-        {/* <h1>{title} </h1> */}
         {status ? (
           <h1
             style={{
               textDecoration: "line-through",
               textDecorationColor: "green",
-              "text-decoration-thickness": "2px",
+              "text-decoration-thickness": "3px",
             }}
           >
             {title}
@@ -63,7 +62,7 @@ const TodoItem = ({ id, title, desc, status }) => {
         {status ? (
           <p style={{ color: "green" }}>Completed</p>
         ) : (
-          <p style={{ color: "red" }}>Pending</p>
+          <p style={{ color: "blue" }}>Pending</p>
         )}
         
         <b>{"Date: "+formatDate(id)}</b>
@@ -86,7 +85,7 @@ const TodoItem = ({ id, title, desc, status }) => {
           ) : (
            
             <button
-              className="update-task-button"
+              className="update-task-button-new"
               onClick={() => {
                 updateStatus();
               }}
