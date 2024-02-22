@@ -26,6 +26,12 @@ export const tasksSlice = createSlice({
       desc: "Rust is an ideal smart contract language",
       status: false,
     },
+    {
+      id: "2024-5-25",
+      name: "Title 5",
+      desc: "AI is an ideal",
+      status: false,
+    },
   ],
   reducers: {
     addTask: (state, action) => {
